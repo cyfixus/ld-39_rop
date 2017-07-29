@@ -2,9 +2,9 @@
 
 [ext_resource path="res://game/scripts/world.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/light/babyblue.png" type="Texture" id=2]
-[ext_resource path="res://game/scenes/commander.tscn" type="PackedScene" id=3]
-[ext_resource path="res://game/scenes/light_source.tscn" type="PackedScene" id=4]
-[ext_resource path="res://game/scenes/battery.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/scenes/battery.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/scenes/commander.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/scenes/light_source.tscn" type="PackedScene" id=5]
 
 [node name="world" type="Node2D"]
 
@@ -16,26 +16,67 @@ transform/pos = Vector2( 374.908, 255.624 )
 transform/scale = Vector2( 1.88625, 1.55639 )
 texture = ExtResource( 2 )
 
-[node name="commander" parent="." instance=ExtResource( 3 )]
+[node name="batteries" type="Node2D" parent="."]
 
-transform/pos = Vector2( 357.24, 254.74 )
+editor/display_folded = true
+visibility/blend_mode = 2
 
-[node name="light_source" parent="commander" instance=ExtResource( 4 )]
+[node name="battery7" parent="batteries" instance=ExtResource( 3 )]
 
-[node name="battery" parent="." instance=ExtResource( 5 )]
+transform/pos = Vector2( 217.124, 287.271 )
 
-transform/pos = Vector2( 359.089, 203.762 )
+[node name="battery11" parent="batteries" instance=ExtResource( 3 )]
 
-[node name="battery1" parent="." instance=ExtResource( 5 )]
+transform/pos = Vector2( 592.915, 105.221 )
+transform/rot = 48.8841
 
-transform/pos = Vector2( 372.451, 141.966 )
+[node name="battery10" parent="batteries" instance=ExtResource( 3 )]
 
-[node name="battery2" parent="." instance=ExtResource( 5 )]
+transform/pos = Vector2( 192.071, 76.8281 )
+transform/rot = 48.8841
+
+[node name="battery9" parent="batteries" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 138.626, 185.39 )
+transform/rot = 48.8841
+
+[node name="battery8" parent="batteries" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 217.124, 287.271 )
+transform/rot = 48.8841
+
+[node name="battery6" parent="batteries" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 359.09, 350.738 )
+
+[node name="battery5" parent="batteries" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 308.984, 339.047 )
+
+[node name="battery4" parent="batteries" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 447.609, 307.313 )
+
+[node name="battery3" parent="batteries" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 435.918, 222.134 )
+
+[node name="battery2" parent="batteries" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 263.889, 203.762 )
 
-[node name="battery3" parent="." instance=ExtResource( 5 )]
+[node name="battery1" parent="batteries" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 435.918, 222.134 )
+transform/pos = Vector2( 372.451, 141.966 )
+
+[node name="battery" parent="batteries" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 359.089, 203.762 )
+
+[node name="commander" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 357.24, 254.74 )
+
+[node name="light_source" parent="commander" instance=ExtResource( 5 )]
 
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://game/scripts/commander.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/player/player_iu.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/player/player_id.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -22,7 +22,6 @@ MOTION_SPEED = 140
 
 [node name="sprite" type="Sprite" parent="."]
 
-transform/scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 
 [node name="collision" type="CollisionShape2D" parent="."]
