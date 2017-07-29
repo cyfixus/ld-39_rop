@@ -16,6 +16,7 @@ script/script = ExtResource( 1 )
 
 [node name="blackbox" type="Sprite" parent="."]
 
+visibility/visible = false
 transform/pos = Vector2( 390.463, 289.633 )
 transform/scale = Vector2( 3.27902, 2.27486 )
 texture = ExtResource( 2 )
