@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://game/scripts/world.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/light/babyblue.png" type="Texture" id=2]
+[ext_resource path="res://game/scenes/commander.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/scenes/light_source.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/scenes/battery.tscn" type="PackedScene" id=5]
+
+[node name="world" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="babyblue" type="Sprite" parent="."]
+
+transform/pos = Vector2( 374.908, 255.624 )
+transform/scale = Vector2( 1.88625, 1.55639 )
+texture = ExtResource( 2 )
+
+[node name="commander" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 357.24, 254.74 )
+
+[node name="light_source" parent="commander" instance=ExtResource( 4 )]
+
+[node name="battery" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 359.089, 203.762 )
+
+[node name="battery1" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 372.451, 141.966 )
+
+[node name="battery2" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 263.889, 203.762 )
+
+[node name="battery3" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 435.918, 222.134 )
+
+
