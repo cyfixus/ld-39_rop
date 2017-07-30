@@ -20,7 +20,7 @@ func _ready():
 	pass
 
 func _input(event):
-	if event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("jump"):
 		if commander_in:
 			if n_passable:
 				global.emit_signal("win", Vector2(0, -32))

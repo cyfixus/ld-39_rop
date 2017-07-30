@@ -10,3 +10,4 @@ func _on_fov_body_enter( body ):
 	if body.get_groups().has("commander"):
 		light.set_color("ff0000")
 		sfx.play("shucks")
+		global.emit_signal("game_over", 0)

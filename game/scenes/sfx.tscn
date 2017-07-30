@@ -12,7 +12,7 @@
 [sub_resource type="SampleLibrary" id=1]
 
 samples/battery = {
-"db": 10.0,
+"db": 6.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 1 )
@@ -36,7 +36,7 @@ samples/pick_up = {
 "sample": ExtResource( 4 )
 }
 samples/recharge = {
-"db": 10.0,
+"db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 5 )
