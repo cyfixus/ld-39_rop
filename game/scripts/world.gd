@@ -14,7 +14,7 @@ func _on_hq_body_enter( body ):
 
 
 func _on_recharge_timeout():
-	global.change_power(10)
+	global.change_power(100)
 
 
 func _on_hq_body_exit( body ):

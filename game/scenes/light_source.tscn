@@ -47,7 +47,7 @@ shadow/item_mask = 1
 [node name="power_loss" type="Timer" parent="."]
 
 process_mode = 1
-wait_time = 0.5
+wait_time = 0.1
 one_shot = false
 autostart = false
 

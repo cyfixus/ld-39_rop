@@ -27,10 +27,10 @@ func _on_power_loss_timeout():
 
 
 func _on_Area2D_area_enter( area ):
-	if area.get_groups().has("battery"):
+	if area.get_groups().has("shrouded"):
 		area.show()
 
 
 func _on_Area2D_area_exit( area ):
-	if area.get_groups().has("battery"):
+	if area.get_groups().has("shrouded"):
 		area.hide()
