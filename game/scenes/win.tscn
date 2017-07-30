@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://game/scripts/win.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/light/overlay.png" type="Texture" id=2]
+[ext_resource path="res://assets/font/rop.fnt" type="BitmapFont" id=3]
 
 [node name="win" type="Node2D"]
 
@@ -51,6 +52,7 @@ margin/left = 47.0
 margin/top = 36.0
 margin/right = 87.0
 margin/bottom = 50.0
+custom_fonts/font = ExtResource( 3 )
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -80,6 +82,7 @@ margin/left = 67.0
 margin/top = 11.0
 margin/right = 107.0
 margin/bottom = 25.0
+custom_fonts/font = ExtResource( 3 )
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1

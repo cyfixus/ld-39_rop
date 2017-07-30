@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg4353"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   width="20"
+   height="20"
+   viewBox="0 0 20 20"
+   sodipodi:docname="z.png">
+  <metadata
+     id="metadata4359">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs4357" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="480"
+     id="namedview4355"
+     showgrid="false"
+     inkscape:zoom="11.8"
+     inkscape:cx="4.2469442"
+     inkscape:cy="10"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg4353" />
+  <path
+     style="fill:#000000"
+     d="M 9.3085507,11.383391 18.648882,2.7908788 9.5784307,1.8970995 C 4.5896827,1.4055209 0.76657133,0.7447281 1.0826283,0.4286711 1.3986853,0.11261407 6.0484827,0.26551155 11.415512,0.7684433 l 9.758234,0.9144214 -9.352763,8.6190523 -9.3527623,8.619053 9.3750003,-0.596561 c 8.033875,-0.511221 8.480916,-0.443645 3.125,0.472381 -3.4375,0.587917 -8.2187503,1.09373 -10.6250003,1.124027 l -4.37500037,0.05509 9.34033037,-8.592513 z"
+     id="path4363"
+     inkscape:connector-curvature="0" />
+</svg>

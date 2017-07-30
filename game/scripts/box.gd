@@ -19,8 +19,9 @@ func _fixed_process(delta):
 
 func _on_grab_area_body_enter( body ):
 	if body.get_groups().has("commander"):
-		picked_up = true
-		sfx.play("pick_up")
+		if !picked_up:
+			sfx.play("pick_up")
+			picked_up = true
 	elif body.get_groups().has("tent"):
 		picked_up = false
 

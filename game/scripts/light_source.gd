@@ -27,7 +27,7 @@ func adjust_light(power):
 		light.set_texture_scale(scale)
 		light_area.set_scale(Vector2(scale, scale))
 	
-func game_over():
+func game_over(state):
 	pass
 
 func _on_power_loss_timeout():

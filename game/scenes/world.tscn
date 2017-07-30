@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=1]
+[gd_scene load_steps=16 format=1]
 
 [ext_resource path="res://game/scripts/world.gd" type="Script" id=1]
 [ext_resource path="res://game/tilesets/map.xml" type="TileSet" id=2]
@@ -6,9 +6,10 @@
 [ext_resource path="res://game/scenes/commander.tscn" type="PackedScene" id=4]
 [ext_resource path="res://game/scenes/sentries.tscn" type="PackedScene" id=5]
 [ext_resource path="res://game/scripts/boundaries.gd" type="Script" id=6]
-[ext_resource path="res://assets/sprites/jump.png" type="Texture" id=7]
-[ext_resource path="res://assets/sprites/drop.png" type="Texture" id=8]
-[ext_resource path="res://assets/sprites/arrow.png" type="Texture" id=9]
+[ext_resource path="res://assets/font/rop.fnt" type="BitmapFont" id=7]
+[ext_resource path="res://assets/sprites/jump.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/drop.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/arrow.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -209,6 +210,7 @@ margin/left = 7.0
 margin/top = -15.0
 margin/right = 47.0
 margin/bottom = -1.0
+custom_fonts/font = ExtResource( 7 )
 text = "0"
 percent_visible = 1.0
 lines_skipped = 0
@@ -224,6 +226,7 @@ margin/left = -666.0
 margin/top = -12.0
 margin/right = -626.0
 margin/bottom = 2.0
+custom_fonts/font = ExtResource( 7 )
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -246,14 +249,12 @@ flat = false
 
 [node name="touch" type="Node2D" parent="hud"]
 
-visibility/visible = false
-
 [node name="jump" type="TouchScreenButton" parent="hud/touch"]
 
 transform/pos = Vector2( -3.258, 394.22 )
 transform/rot = 90.0
 transform/scale = Vector2( 4, 4 )
-normal = ExtResource( 7 )
+normal = ExtResource( 8 )
 pressed = null
 bitmask = null
 shape = null
@@ -268,7 +269,7 @@ visibility_mode = 0
 transform/pos = Vector2( -331.503, 398.293 )
 transform/rot = 90.0
 transform/scale = Vector2( 4, 4 )
-normal = ExtResource( 8 )
+normal = ExtResource( 9 )
 pressed = null
 bitmask = null
 shape = null
@@ -284,7 +285,7 @@ visibility/opacity = 0.5
 transform/pos = Vector2( -617.395, 373.858 )
 transform/rot = -130.0
 transform/scale = Vector2( 3, 3 )
-normal = ExtResource( 9 )
+normal = ExtResource( 10 )
 pressed = null
 bitmask = null
 shape = null
@@ -300,7 +301,7 @@ visibility/opacity = 0.5
 transform/pos = Vector2( -534.315, 344.535 )
 transform/rot = -45.0
 transform/scale = Vector2( 3, 3 )
-normal = ExtResource( 9 )
+normal = ExtResource( 10 )
 pressed = null
 bitmask = null
 shape = null
@@ -316,7 +317,7 @@ visibility/opacity = 0.5
 transform/pos = Vector2( -570.968, 269.601 )
 transform/rot = 45.0
 transform/scale = Vector2( 3, 3 )
-normal = ExtResource( 9 )
+normal = ExtResource( 10 )
 pressed = null
 bitmask = null
 shape = null
@@ -332,7 +333,7 @@ visibility/opacity = 0.5
 transform/pos = Vector2( -648.346, 302.996 )
 transform/rot = 135.0
 transform/scale = Vector2( 3, 3 )
-normal = ExtResource( 9 )
+normal = ExtResource( 10 )
 pressed = null
 bitmask = null
 shape = null
@@ -348,7 +349,7 @@ visibility/opacity = 0.5
 transform/pos = Vector2( -617.395, 298.109 )
 transform/rot = 90.0
 transform/scale = Vector2( 3, 3 )
-normal = ExtResource( 9 )
+normal = ExtResource( 10 )
 pressed = null
 bitmask = null
 shape = null
@@ -364,7 +365,7 @@ visibility/opacity = 0.5
 transform/pos = Vector2( -570.968, 347.794 )
 transform/rot = -90.0
 transform/scale = Vector2( 3, 3 )
-normal = ExtResource( 9 )
+normal = ExtResource( 10 )
 pressed = null
 bitmask = null
 shape = null
@@ -379,7 +380,7 @@ visibility_mode = 0
 visibility/opacity = 0.5
 transform/pos = Vector2( -567.71, 298.923 )
 transform/scale = Vector2( 3, 3 )
-normal = ExtResource( 9 )
+normal = ExtResource( 10 )
 pressed = null
 bitmask = null
 shape = null
@@ -395,7 +396,7 @@ visibility/opacity = 0.5
 transform/pos = Vector2( -620.653, 346.165 )
 transform/rot = -180.0
 transform/scale = Vector2( 3, 3 )
-normal = ExtResource( 9 )
+normal = ExtResource( 10 )
 pressed = null
 bitmask = null
 shape = null
