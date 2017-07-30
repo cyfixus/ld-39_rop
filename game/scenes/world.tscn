@@ -1,39 +1,45 @@
-[gd_scene load_steps=15 format=1]
+[gd_scene load_steps=21 format=1]
 
 [ext_resource path="res://game/scripts/world.gd" type="Script" id=1]
 [ext_resource path="res://game/tilesets/map.xml" type="TileSet" id=2]
 [ext_resource path="res://assets/sprites/map/hq.png" type="Texture" id=3]
 [ext_resource path="res://game/scenes/commander.tscn" type="PackedScene" id=4]
 [ext_resource path="res://game/scenes/light_source.tscn" type="PackedScene" id=5]
-[ext_resource path="res://game/scenes/battery.tscn" type="PackedScene" id=6]
-[ext_resource path="res://game/scenes/tent.tscn" type="PackedScene" id=7]
-[ext_resource path="res://game/scenes/box.tscn" type="PackedScene" id=8]
-[ext_resource path="res://game/scripts/boundaries.gd" type="Script" id=9]
+[ext_resource path="res://game/scripts/boundaries.gd" type="Script" id=6]
+[ext_resource path="res://game/scripts/sentries.gd" type="Script" id=7]
+[ext_resource path="res://game/scenes/sentry_ne.tscn" type="PackedScene" id=8]
+[ext_resource path="res://game/scenes/sentry_nw.tscn" type="PackedScene" id=9]
+[ext_resource path="res://game/scenes/sentry_n.tscn" type="PackedScene" id=10]
+[ext_resource path="res://game/scenes/sentry_w.tscn" type="PackedScene" id=11]
+[ext_resource path="res://game/scenes/sentry_sw.tscn" type="PackedScene" id=12]
+[ext_resource path="res://game/scenes/sentry_s.tscn" type="PackedScene" id=13]
+[ext_resource path="res://game/scenes/sentry_se.tscn" type="PackedScene" id=14]
+[ext_resource path="res://game/scenes/sentry_e.tscn" type="PackedScene" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 16, 16 )
 
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 319, 36 )
+
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 318, 29 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
-extents = Vector2( 319, 33 )
+extents = Vector2( 32, 156 )
 
 [sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 31, 160 )
-
-[sub_resource type="RectangleShape2D" id=5]
-
-custom_solver_bias = 0.0
-extents = Vector2( 32, 156 )
 
 [node name="world" type="Node2D"]
 
@@ -59,6 +65,7 @@ tile_data = IntArray( 0, 9, 1, 9, 2, 9, 3, 9, 4, 9, 5, 9, 6, 9, 7, 9, 8, 9, 9, 9
 
 [node name="hq" type="Area2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 14, 10 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
@@ -111,187 +118,200 @@ wait_time = 1.0
 one_shot = false
 autostart = false
 
-[node name="batteries" type="Node2D" parent="."]
+[node name="boundaries" type="Node2D" parent="."]
 
 editor/display_folded = true
-visibility/blend_mode = 2
+script/script = ExtResource( 6 )
 
-[node name="battery7" parent="batteries" instance=ExtResource( 6 )]
+[node name="north1" type="Area2D" parent="boundaries"]
 
-transform/pos = Vector2( 217.124, 287.271 )
+input/pickable = true
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 368, 49 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
 
-[node name="battery11" parent="batteries" instance=ExtResource( 6 )]
+[node name="collision" type="CollisionShape2D" parent="boundaries/north1"]
 
-transform/pos = Vector2( 592.915, 105.221 )
-transform/rot = 48.8841
+transform/pos = Vector2( 368, 49 )
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 0
 
-[node name="battery10" parent="batteries" instance=ExtResource( 6 )]
-
-transform/pos = Vector2( 192.071, 76.8281 )
-transform/rot = 48.8841
-
-[node name="battery9" parent="batteries" instance=ExtResource( 6 )]
-
-transform/pos = Vector2( 138.626, 185.39 )
-transform/rot = 48.8841
-
-[node name="battery8" parent="batteries" instance=ExtResource( 6 )]
-
-transform/pos = Vector2( 217.124, 287.271 )
-transform/rot = 48.8841
-
-[node name="battery6" parent="batteries" instance=ExtResource( 6 )]
-
-transform/pos = Vector2( 359.09, 350.738 )
-
-[node name="battery5" parent="batteries" instance=ExtResource( 6 )]
-
-transform/pos = Vector2( 308.984, 339.047 )
-
-[node name="battery4" parent="batteries" instance=ExtResource( 6 )]
-
-transform/pos = Vector2( 447.609, 307.313 )
-
-[node name="battery3" parent="batteries" instance=ExtResource( 6 )]
-
-transform/pos = Vector2( 435.918, 222.134 )
-
-[node name="battery2" parent="batteries" instance=ExtResource( 6 )]
-
-transform/pos = Vector2( 263.889, 203.762 )
-
-[node name="battery1" parent="batteries" instance=ExtResource( 6 )]
-
-transform/pos = Vector2( 372.451, 141.966 )
-
-[node name="battery" parent="batteries" instance=ExtResource( 6 )]
-
-transform/pos = Vector2( 359.089, 203.762 )
-
-[node name="tents" type="Node2D" parent="."]
-
-editor/display_folded = true
-transform/pos = Vector2( 387, 149 )
-
-[node name="tent" parent="tents" instance=ExtResource( 7 )]
-
-transform/pos = Vector2( -236, 164 )
-
-[node name="tent1" parent="tents" instance=ExtResource( 7 )]
-
-transform/pos = Vector2( -236, 106 )
-
-[node name="tent2" parent="tents" instance=ExtResource( 7 )]
-
-transform/pos = Vector2( -237, 51 )
-
-[node name="tent3" parent="tents" instance=ExtResource( 7 )]
-
-transform/pos = Vector2( -279, -30 )
-transform/rot = 90.0
-
-[node name="tent4" parent="tents" instance=ExtResource( 7 )]
-
-transform/pos = Vector2( -135, 125 )
-transform/rot = 90.0
-
-[node name="tent5" parent="tents" instance=ExtResource( 7 )]
-
-transform/pos = Vector2( -94, 10 )
-transform/rot = 90.0
-
-[node name="tent6" parent="tents" instance=ExtResource( 7 )]
-
-[node name="tent7" parent="tents" instance=ExtResource( 7 )]
-
-transform/pos = Vector2( 252, 100 )
-transform/rot = 90.0
-
-[node name="tent8" parent="tents" instance=ExtResource( 7 )]
-
-transform/pos = Vector2( 230, -19 )
-
-[node name="tent9" parent="tents" instance=ExtResource( 7 )]
-
-transform/pos = Vector2( 133, -23 )
-transform/rot = 90.0
-
-[node name="tent10" parent="tents" instance=ExtResource( 7 )]
-
-transform/pos = Vector2( 156, 119 )
-transform/rot = 90.0
-
-[node name="tent11" parent="tents" instance=ExtResource( 7 )]
-
-transform/pos = Vector2( 65, 79 )
-
-[node name="boxes" type="Node2D" parent="."]
-
-[node name="box" parent="boxes" instance=ExtResource( 8 )]
-
-transform/pos = Vector2( 189, 133 )
-
-[node name="box1" parent="boxes" instance=ExtResource( 8 )]
-
-transform/pos = Vector2( 446, 92 )
-
-[node name="box2" parent="boxes" instance=ExtResource( 8 )]
-
-transform/pos = Vector2( 470, 312 )
-
-[node name="boundaries" type="Area2D" parent="."]
+[node name="south1" type="Area2D" parent="boundaries"]
 
 input/pickable = true
 shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 368, 385 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 3 )
-shapes/1/transform = Matrix32( 1, 0, 0, 1, 370, 35 )
-shapes/1/trigger = false
-shapes/2/shape = SubResource( 4 )
-shapes/2/transform = Matrix32( 1, 0, 0, 1, 703, 209 )
-shapes/2/trigger = false
-shapes/3/shape = SubResource( 5 )
-shapes/3/transform = Matrix32( 1, 0, 0, 1, 35, 207 )
-shapes/3/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-script/script = ExtResource( 9 )
 
-[node name="south" type="CollisionShape2D" parent="boundaries"]
+[node name="collision" type="CollisionShape2D" parent="boundaries/south1"]
 
 transform/pos = Vector2( 368, 385 )
 shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
 
-[node name="north" type="CollisionShape2D" parent="boundaries"]
+[node name="west1" type="Area2D" parent="boundaries"]
 
-transform/pos = Vector2( 370, 35 )
-shape = SubResource( 3 )
-trigger = false
-_update_shape_index = 1
+input/pickable = true
+shapes/0/shape = SubResource( 5 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 35, 207 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
 
-[node name="east" type="CollisionShape2D" parent="boundaries"]
-
-transform/pos = Vector2( 703, 209 )
-shape = SubResource( 4 )
-trigger = false
-_update_shape_index = 2
-
-[node name="west" type="CollisionShape2D" parent="boundaries"]
+[node name="collision" type="CollisionShape2D" parent="boundaries/west1"]
 
 transform/pos = Vector2( 35, 207 )
 shape = SubResource( 5 )
 trigger = false
-_update_shape_index = 3
+_update_shape_index = 0
+
+[node name="east1" type="Area2D" parent="boundaries"]
+
+input/pickable = true
+shapes/0/shape = SubResource( 4 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 703, 209 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="collision" type="CollisionShape2D" parent="boundaries/east1"]
+
+transform/pos = Vector2( 703, 209 )
+shape = SubResource( 4 )
+trigger = false
+_update_shape_index = 0
+
+[node name="sentries" type="Node2D" parent="."]
+
+editor/display_folded = true
+script/script = ExtResource( 7 )
+
+[node name="sentry_5" parent="sentries" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 687.285, 48.8172 )
+
+[node name="sentry_4" parent="sentries" instance=ExtResource( 9 )]
+
+[node name="sentry_1" parent="sentries" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 236.529, 49.5109 )
+transform/scale = Vector2( 1, 1 )
+
+[node name="sentry_3" parent="sentries" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 114.579, 49.5109 )
+transform/scale = Vector2( 1, 1 )
+
+[node name="sentry_2" parent="sentries" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 352.419, 50.3254 )
+transform/scale = Vector2( 1, 1 )
+
+[node name="sentry_9" parent="sentries" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 479.482, 48.6964 )
+transform/scale = Vector2( 1, 1 )
+
+[node name="sentry_10" parent="sentries" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 598.4, 50.3254 )
+transform/scale = Vector2( 1, 1 )
+
+[node name="sentry_6" parent="sentries" instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 50.9279, 126.811 )
+
+[node name="sentry_7" parent="sentries" instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 50.9278, 213.719 )
+
+[node name="sentry_8" parent="sentries" instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 50.2644, 300.628 )
+
+[node name="sentry_11" parent="sentries" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 50.5666, 366.336 )
+
+[node name="sentry_12" parent="sentries" instance=ExtResource( 13 )]
+
+transform/pos = Vector2( 113.284, 367.965 )
+
+[node name="sentry_13" parent="sentries" instance=ExtResource( 13 )]
+
+transform/pos = Vector2( 235.459, 368.78 )
+
+[node name="sentry_14" parent="sentries" instance=ExtResource( 13 )]
+
+transform/pos = Vector2( 356.006, 367.965 )
+
+[node name="sentry_15" parent="sentries" instance=ExtResource( 13 )]
+
+transform/pos = Vector2( 479.811, 368.78 )
+
+[node name="sentry_16" parent="sentries" instance=ExtResource( 13 )]
+
+transform/pos = Vector2( 600.358, 367.965 )
+
+[node name="sentry_17" parent="sentries" instance=ExtResource( 14 )]
+
+transform/pos = Vector2( 686.696, 369.594 )
+
+[node name="sentry_18" parent="sentries" instance=ExtResource( 15 )]
+
+transform/pos = Vector2( 686.696, 309.321 )
+
+[node name="sentry_19" parent="sentries" instance=ExtResource( 15 )]
+
+transform/pos = Vector2( 687.51, 222.169 )
+
+[node name="sentry_20" parent="sentries" instance=ExtResource( 15 )]
+
+transform/pos = Vector2( 687.51, 135.017 )
+
+[node name="enemy_spawn" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 5.0
+one_shot = false
+autostart = true
 
 [connection signal="body_enter" from="hq" to="." method="_on_hq_body_enter"]
 
 [connection signal="body_exit" from="hq" to="." method="_on_hq_body_exit"]
 
 [connection signal="timeout" from="recharge" to="." method="_on_recharge_timeout"]
+
+[connection signal="body_enter" from="boundaries/north1" to="boundaries" method="_on_north1_body_enter"]
+
+[connection signal="body_exit" from="boundaries/north1" to="boundaries" method="_on_north1_body_exit"]
+
+[connection signal="body_enter" from="boundaries/south1" to="boundaries" method="_on_south1_body_enter"]
+
+[connection signal="body_exit" from="boundaries/south1" to="boundaries" method="_on_south1_body_exit"]
+
+[connection signal="body_enter" from="boundaries/west1" to="boundaries" method="_on_west1_body_enter"]
+
+[connection signal="body_exit" from="boundaries/west1" to="boundaries" method="_on_west1_body_exit"]
+
+[connection signal="body_enter" from="boundaries/east1" to="boundaries" method="_on_east1_body_enter"]
+
+[connection signal="body_exit" from="boundaries/east1" to="boundaries" method="_on_east1_body_exit"]
+
+[connection signal="timeout" from="enemy_spawn" to="." method="_on_enemy_spawn_timeout"]
 
 

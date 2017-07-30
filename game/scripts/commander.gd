@@ -3,6 +3,7 @@ extends KinematicBody2D
 onready var sprite = get_node("sprite")
 onready var collision = get_node("collision")
 onready var ray = get_node("ray")
+onready var anim = get_node("anim")
 
 export var MOTION_SPEED = 140
 
@@ -10,9 +11,16 @@ func _ready():
 	add_to_group("commander")
 	set_process(true)
 	set_process_input(true)
+	global.connect("win", self, "wall_jump")
 	
 func _input(event):
 	pass
+
+func wall_jump(dir):
+	collision.set_trigger(true)
+	anim.play("jump")
+	set_pos(get_global_pos()+dir)
+	collision.set_trigger(false)
 
 func rotate(deg):
 	ray.set_rotd(deg)

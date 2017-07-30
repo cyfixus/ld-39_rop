@@ -10,16 +10,25 @@ func _ready():
 	global.connect("game_over", self, "game_over")
 	
 func adjust_light(power):
-	var scale = power/20.0
+	var scale
+	if power <= 100:
+		scale = power/20.0
+	elif power > 100:
+		scale = power/25.0
+	elif power > 150:
+		scale = power/30.0
+	elif power > 200:
+		scale = power/35.0
+	elif power > 250:
+		scale = power/40.0
 	if scale <= 1:
-		print("max")
+		pass
 	else:
 		light.set_texture_scale(scale)
 		light_area.set_scale(Vector2(scale, scale))
-	print("scale", scale)
 	
 func game_over():
-	print("game over")
+	pass
 
 func _on_power_loss_timeout():
 	global.change_power(-1)
