@@ -23,13 +23,17 @@ func _input(event):
 	if event.is_action_pressed("jump"):
 		if commander_in:
 			if n_passable:
-				global.emit_signal("win", Vector2(0, -32))
+				global.emit_signal("jumpable", Vector2(0, -32))
+				global.win_state = true
 			elif s_passable:
-				global.emit_signal("win", Vector2(0, 32))
+				global.emit_signal("jumpable", Vector2(0, 32))
+				global.win_state = true
 			elif e_passable:
-				global.emit_signal("win", Vector2(32, 0))
+				global.emit_signal("jumpable", Vector2(32, 0))
+				global.win_state = true
 			elif w_passable:
-				global.emit_signal("win", Vector2(-32, 0))
+				global.emit_signal("jumpable", Vector2(-32, 0))
+				global.win_state = true
 				
 				
 func _on_north1_body_enter( body ):

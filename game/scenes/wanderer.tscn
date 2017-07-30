@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://game/scripts/wanderer.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/player/player_id.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/wanderer.png" type="Texture" id=2]
 [ext_resource path="res://assets/sprites/light/sentry_light.png" type="Texture" id=3]
 [ext_resource path="res://game/scripts/wanderer_fov.gd" type="Script" id=4]
 

@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://assets/audio/battery.wav" type="Sample" id=1]
 [ext_resource path="res://assets/audio/caught.wav" type="Sample" id=2]
 [ext_resource path="res://assets/audio/drop.wav" type="Sample" id=3]
 [ext_resource path="res://assets/audio/pick_up.wav" type="Sample" id=4]
 [ext_resource path="res://assets/audio/recharge.wav" type="Sample" id=5]
-[ext_resource path="res://assets/audio/shucks.wav" type="Sample" id=6]
-[ext_resource path="res://assets/audio/thud.wav" type="Sample" id=7]
-[ext_resource path="res://assets/audio/wanderer_awaken.wav" type="Sample" id=8]
+[ext_resource path="res://assets/audio/rop.wav" type="Sample" id=6]
+[ext_resource path="res://assets/audio/shucks.wav" type="Sample" id=7]
+[ext_resource path="res://assets/audio/thud.wav" type="Sample" id=8]
+[ext_resource path="res://assets/audio/wanderer_awaken.wav" type="Sample" id=9]
 
 [sub_resource type="SampleLibrary" id=1]
 
@@ -41,23 +42,29 @@ samples/recharge = {
 "priority": 0,
 "sample": ExtResource( 5 )
 }
-samples/shucks = {
-"db": 0.0,
+samples/rop = {
+"db": 8.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 6 )
 }
-samples/thud = {
+samples/shucks = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 7 )
 }
-samples/wanderer_awaken = {
+samples/thud = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 8 )
+}
+samples/wanderer_awaken = {
+"db": 10.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 9 )
 }
 
 [node name="sfx" type="SamplePlayer"]

@@ -11,7 +11,7 @@ func _ready():
 	add_to_group("commander")
 	set_process(true)
 	set_process_input(true)
-	global.connect("win", self, "wall_jump")
+	global.connect("jumpable", self, "wall_jump")
 	global.connect("game_over", self, "game_over")
 	
 func _input(event):
@@ -34,6 +34,10 @@ func rotate(deg):
 	ray.set_rotd(deg)
 	sprite.set_rotd(deg)
 	
+func check_win():
+	if get_global_pos().x < 0 || get_global_pos().x > 736 || get_global_pos().y < 0 || get_global_pos().y > 414:
+		global.emit_signal("win")
+		
 func _process(delta):
 	if !disabled:
 		var motion = Vector2()
@@ -81,3 +85,6 @@ func _process(delta):
 		global.commander_pos = get_global_pos()
 		if is_colliding():
 			sfx.play("thud")
+			
+		if global.win_state:
+			check_win()

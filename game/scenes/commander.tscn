@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 3.91078, 7.86175 )
+extents = Vector2( 1.81824, 2.95347 )
 
 [sub_resource type="Animation" id=2]
 
@@ -74,7 +74,7 @@ tracks/0/keys = {
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, -0.00344658, -4.00302 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -0.00344658, -5.56937 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -84,12 +84,11 @@ MOTION_SPEED = 140
 
 [node name="sprite" type="Sprite" parent="."]
 
-transform/rot = 363.0
 texture = ExtResource( 2 )
 
 [node name="collision" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( -0.00344658, -4.00302 )
+transform/pos = Vector2( -0.00344658, -5.56937 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
