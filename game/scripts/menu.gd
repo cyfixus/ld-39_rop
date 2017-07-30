@@ -15,5 +15,9 @@ func _ready():
 	text.newline()
 	text.newline()
 	text.add_text("gather three boxes and place them near a wall to jump and run out of your power as commander!")
+	text.newline()
+	text.add_text("Use the arrow keys, left joystick, d-pad, or [WASD] to control the commander's movement.")
+	text.newline()
+	text.add_text("[SPACE] to drop a box (you pick them up automatically), [SHIFT] to jump when you've got 3 boxes next to a wall!") 
 func _on_Button_pressed():
 	global.new_game()

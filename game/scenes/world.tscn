@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=1]
+[gd_scene load_steps=15 format=1]
 
 [ext_resource path="res://game/scripts/world.gd" type="Script" id=1]
 [ext_resource path="res://game/tilesets/map.xml" type="TileSet" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://game/scenes/commander.tscn" type="PackedScene" id=4]
 [ext_resource path="res://game/scenes/sentries.tscn" type="PackedScene" id=5]
 [ext_resource path="res://game/scripts/boundaries.gd" type="Script" id=6]
+[ext_resource path="res://assets/sprites/jump.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/drop.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/arrow.png" type="Texture" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -240,6 +243,167 @@ enabled_focus_mode = 2
 shortcut = null
 text = "reset"
 flat = false
+
+[node name="touch" type="Node2D" parent="hud"]
+
+visibility/visible = false
+
+[node name="jump" type="TouchScreenButton" parent="hud/touch"]
+
+transform/pos = Vector2( -3.258, 394.22 )
+transform/rot = 90.0
+transform/scale = Vector2( 4, 4 )
+normal = ExtResource( 7 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = true
+action = "jump"
+visibility_mode = 0
+
+[node name="drop" type="TouchScreenButton" parent="hud/touch"]
+
+transform/pos = Vector2( -331.503, 398.293 )
+transform/rot = 90.0
+transform/scale = Vector2( 4, 4 )
+normal = ExtResource( 8 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "drop"
+visibility_mode = 0
+
+[node name="dl" type="TouchScreenButton" parent="hud/touch"]
+
+visibility/opacity = 0.5
+transform/pos = Vector2( -617.395, 373.858 )
+transform/rot = -130.0
+transform/scale = Vector2( 3, 3 )
+normal = ExtResource( 9 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = true
+action = "dl"
+visibility_mode = 0
+
+[node name="dr" type="TouchScreenButton" parent="hud/touch"]
+
+visibility/opacity = 0.5
+transform/pos = Vector2( -534.315, 344.535 )
+transform/rot = -45.0
+transform/scale = Vector2( 3, 3 )
+normal = ExtResource( 9 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = true
+action = "dr"
+visibility_mode = 0
+
+[node name="ur" type="TouchScreenButton" parent="hud/touch"]
+
+visibility/opacity = 0.5
+transform/pos = Vector2( -570.968, 269.601 )
+transform/rot = 45.0
+transform/scale = Vector2( 3, 3 )
+normal = ExtResource( 9 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = true
+action = "ur"
+visibility_mode = 0
+
+[node name="ul" type="TouchScreenButton" parent="hud/touch"]
+
+visibility/opacity = 0.5
+transform/pos = Vector2( -648.346, 302.996 )
+transform/rot = 135.0
+transform/scale = Vector2( 3, 3 )
+normal = ExtResource( 9 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = true
+action = "ul"
+visibility_mode = 0
+
+[node name="u" type="TouchScreenButton" parent="hud/touch"]
+
+visibility/opacity = 0.5
+transform/pos = Vector2( -617.395, 298.109 )
+transform/rot = 90.0
+transform/scale = Vector2( 3, 3 )
+normal = ExtResource( 9 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = true
+action = "ui_up"
+visibility_mode = 0
+
+[node name="d" type="TouchScreenButton" parent="hud/touch"]
+
+visibility/opacity = 0.5
+transform/pos = Vector2( -570.968, 347.794 )
+transform/rot = -90.0
+transform/scale = Vector2( 3, 3 )
+normal = ExtResource( 9 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = true
+action = "ui_down"
+visibility_mode = 0
+
+[node name="r" type="TouchScreenButton" parent="hud/touch"]
+
+visibility/opacity = 0.5
+transform/pos = Vector2( -567.71, 298.923 )
+transform/scale = Vector2( 3, 3 )
+normal = ExtResource( 9 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = true
+action = "ui_right"
+visibility_mode = 0
+
+[node name="l" type="TouchScreenButton" parent="hud/touch"]
+
+visibility/opacity = 0.5
+transform/pos = Vector2( -620.653, 346.165 )
+transform/rot = -180.0
+transform/scale = Vector2( 3, 3 )
+normal = ExtResource( 9 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = true
+action = "ui_left"
+visibility_mode = 0
 
 [node name="game_timer" type="Timer" parent="."]
 
