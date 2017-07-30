@@ -1,42 +1,33 @@
-[gd_scene load_steps=21 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://game/scripts/world.gd" type="Script" id=1]
 [ext_resource path="res://game/tilesets/map.xml" type="TileSet" id=2]
 [ext_resource path="res://assets/sprites/map/hq.png" type="Texture" id=3]
 [ext_resource path="res://game/scenes/commander.tscn" type="PackedScene" id=4]
-[ext_resource path="res://game/scenes/light_source.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/scenes/sentries.tscn" type="PackedScene" id=5]
 [ext_resource path="res://game/scripts/boundaries.gd" type="Script" id=6]
-[ext_resource path="res://game/scripts/sentries.gd" type="Script" id=7]
-[ext_resource path="res://game/scenes/sentry_ne.tscn" type="PackedScene" id=8]
-[ext_resource path="res://game/scenes/sentry_nw.tscn" type="PackedScene" id=9]
-[ext_resource path="res://game/scenes/sentry_n.tscn" type="PackedScene" id=10]
-[ext_resource path="res://game/scenes/sentry_w.tscn" type="PackedScene" id=11]
-[ext_resource path="res://game/scenes/sentry_sw.tscn" type="PackedScene" id=12]
-[ext_resource path="res://game/scenes/sentry_s.tscn" type="PackedScene" id=13]
-[ext_resource path="res://game/scenes/sentry_se.tscn" type="PackedScene" id=14]
-[ext_resource path="res://game/scenes/sentry_e.tscn" type="PackedScene" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 16, 16 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 319, 36 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 318, 29 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 156 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 31, 160 )
@@ -103,20 +94,18 @@ shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="commander" parent="." instance=ExtResource( 4 )]
-
-transform/pos = Vector2( 357.24, 254.74 )
-
-[node name="light_source" parent="commander" instance=ExtResource( 5 )]
-
-visibility/visible = false
-
 [node name="recharge" type="Timer" parent="."]
 
 process_mode = 1
-wait_time = 1.0
+wait_time = 2.0
 one_shot = false
 autostart = false
+
+[node name="commander" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 663.821, 351.051 )
+
+[node name="sentries" parent="." instance=ExtResource( 5 )]
 
 [node name="boundaries" type="Node2D" parent="."]
 
@@ -126,7 +115,7 @@ script/script = ExtResource( 6 )
 [node name="north1" type="Area2D" parent="boundaries"]
 
 input/pickable = true
-shapes/0/shape = SubResource( 3 )
+shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 368, 49 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -137,14 +126,14 @@ angular_damp = 1.0
 [node name="collision" type="CollisionShape2D" parent="boundaries/north1"]
 
 transform/pos = Vector2( 368, 49 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
 
 [node name="south1" type="Area2D" parent="boundaries"]
 
 input/pickable = true
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 368, 385 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -155,14 +144,14 @@ angular_damp = 1.0
 [node name="collision" type="CollisionShape2D" parent="boundaries/south1"]
 
 transform/pos = Vector2( 368, 385 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 0
 
 [node name="west1" type="Area2D" parent="boundaries"]
 
 input/pickable = true
-shapes/0/shape = SubResource( 5 )
+shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 35, 207 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -173,14 +162,14 @@ angular_damp = 1.0
 [node name="collision" type="CollisionShape2D" parent="boundaries/west1"]
 
 transform/pos = Vector2( 35, 207 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 trigger = false
 _update_shape_index = 0
 
 [node name="east1" type="Area2D" parent="boundaries"]
 
 input/pickable = true
-shapes/0/shape = SubResource( 4 )
+shapes/0/shape = SubResource( 5 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 703, 209 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -191,97 +180,9 @@ angular_damp = 1.0
 [node name="collision" type="CollisionShape2D" parent="boundaries/east1"]
 
 transform/pos = Vector2( 703, 209 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 trigger = false
 _update_shape_index = 0
-
-[node name="sentries" type="Node2D" parent="."]
-
-editor/display_folded = true
-script/script = ExtResource( 7 )
-
-[node name="sentry_5" parent="sentries" instance=ExtResource( 8 )]
-
-transform/pos = Vector2( 687.285, 48.8172 )
-
-[node name="sentry_4" parent="sentries" instance=ExtResource( 9 )]
-
-[node name="sentry_1" parent="sentries" instance=ExtResource( 10 )]
-
-transform/pos = Vector2( 236.529, 49.5109 )
-transform/scale = Vector2( 1, 1 )
-
-[node name="sentry_3" parent="sentries" instance=ExtResource( 10 )]
-
-transform/pos = Vector2( 114.579, 49.5109 )
-transform/scale = Vector2( 1, 1 )
-
-[node name="sentry_2" parent="sentries" instance=ExtResource( 10 )]
-
-transform/pos = Vector2( 352.419, 50.3254 )
-transform/scale = Vector2( 1, 1 )
-
-[node name="sentry_9" parent="sentries" instance=ExtResource( 10 )]
-
-transform/pos = Vector2( 479.482, 48.6964 )
-transform/scale = Vector2( 1, 1 )
-
-[node name="sentry_10" parent="sentries" instance=ExtResource( 10 )]
-
-transform/pos = Vector2( 598.4, 50.3254 )
-transform/scale = Vector2( 1, 1 )
-
-[node name="sentry_6" parent="sentries" instance=ExtResource( 11 )]
-
-transform/pos = Vector2( 50.9279, 126.811 )
-
-[node name="sentry_7" parent="sentries" instance=ExtResource( 11 )]
-
-transform/pos = Vector2( 50.9278, 213.719 )
-
-[node name="sentry_8" parent="sentries" instance=ExtResource( 11 )]
-
-transform/pos = Vector2( 50.2644, 300.628 )
-
-[node name="sentry_11" parent="sentries" instance=ExtResource( 12 )]
-
-transform/pos = Vector2( 50.5666, 366.336 )
-
-[node name="sentry_12" parent="sentries" instance=ExtResource( 13 )]
-
-transform/pos = Vector2( 113.284, 367.965 )
-
-[node name="sentry_13" parent="sentries" instance=ExtResource( 13 )]
-
-transform/pos = Vector2( 235.459, 368.78 )
-
-[node name="sentry_14" parent="sentries" instance=ExtResource( 13 )]
-
-transform/pos = Vector2( 356.006, 367.965 )
-
-[node name="sentry_15" parent="sentries" instance=ExtResource( 13 )]
-
-transform/pos = Vector2( 479.811, 368.78 )
-
-[node name="sentry_16" parent="sentries" instance=ExtResource( 13 )]
-
-transform/pos = Vector2( 600.358, 367.965 )
-
-[node name="sentry_17" parent="sentries" instance=ExtResource( 14 )]
-
-transform/pos = Vector2( 686.696, 369.594 )
-
-[node name="sentry_18" parent="sentries" instance=ExtResource( 15 )]
-
-transform/pos = Vector2( 686.696, 309.321 )
-
-[node name="sentry_19" parent="sentries" instance=ExtResource( 15 )]
-
-transform/pos = Vector2( 687.51, 222.169 )
-
-[node name="sentry_20" parent="sentries" instance=ExtResource( 15 )]
-
-transform/pos = Vector2( 687.51, 135.017 )
 
 [node name="enemy_spawn" type="Timer" parent="."]
 
@@ -315,3 +216,4 @@ autostart = true
 [connection signal="timeout" from="enemy_spawn" to="." method="_on_enemy_spawn_timeout"]
 
 
+[editable path="sentries"]

@@ -7,5 +7,6 @@ func _ready():
 func _on_battery_body_enter( body ):
 	if body.get_groups().has("commander"):
 		global.change_power(30)
+		sfx.play("battery")
 		queue_free()
 		

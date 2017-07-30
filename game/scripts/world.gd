@@ -5,14 +5,17 @@ onready var enemy_spawn = get_node("enemy_spawn")
 var wanderer = preload("res://game/scenes/wanderer.tscn")
 var tent = preload("res://game/scenes/tent.tscn")
 var box = preload("res://game/scenes/box.tscn")
+var battery = preload("res://game/scenes/battery.tscn")
 
 var orientations = [0, 90]
 var tent_positions = []
 
+
+
 func pitch_tents():
 	for i in range(0, 16):
 		var new_tent = tent.instance()
-		var tent_pos = Vector2(rand_range(80, 640), rand_range(80, 340))
+		var tent_pos = Vector2(rand_range(80, 600), rand_range(80, 300))
 		tent_positions.append(tent_pos)
 		new_tent.set_global_pos(tent_pos)
 		new_tent.get_node("tent").set_rotd(orientations[randi()%orientations.size()])
@@ -28,10 +31,18 @@ func lay_boxes():
 		else:
 			add_child(new_box)
 		
+func disperse_batteries():
+	for i in range(0, 12):
+		var new_battery = battery.instance()
+		new_battery.set_global_pos(Vector2(rand_range(80, 640), rand_range(80, 340)))
+		add_child(new_battery)
+		
 func _ready():
 	randomize()
+
 	pitch_tents()
 	lay_boxes()
+	disperse_batteries()
 	set_fixed_process(true)
 	
 func _fixed_process(delta):
@@ -41,10 +52,11 @@ func _fixed_process(delta):
 func _on_hq_body_enter( body ):
 	if body.get_groups().has("commander"):
 		recharge.start()
-
+		
 
 func _on_recharge_timeout():
 	global.change_power(20)
+	sfx.play("recharge")
 
 
 func _on_hq_body_exit( body ):

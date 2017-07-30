@@ -1,0 +1,96 @@
+[gd_scene load_steps=10 format=1]
+
+[ext_resource path="res://game/scripts/sentries.gd" type="Script" id=1]
+[ext_resource path="res://game/scenes/sentry_ne.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/scenes/sentry_nw.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/scenes/sentry_n.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/scenes/sentry_w.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/scenes/sentry_sw.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/scenes/sentry_s.tscn" type="PackedScene" id=7]
+[ext_resource path="res://game/scenes/sentry_se.tscn" type="PackedScene" id=8]
+[ext_resource path="res://game/scenes/sentry_e.tscn" type="PackedScene" id=9]
+
+[node name="sentries" type="Node2D"]
+
+editor/display_folded = true
+script/script = ExtResource( 1 )
+
+[node name="sentry_5" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 687.285, 48.8172 )
+
+[node name="sentry_4" parent="." instance=ExtResource( 3 )]
+
+[node name="sentry_1" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 236.529, 49.5109 )
+
+[node name="sentry_3" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 114.579, 49.5109 )
+
+[node name="sentry_2" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 352.419, 50.3254 )
+
+[node name="sentry_9" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 479.482, 48.6964 )
+
+[node name="sentry_10" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 598.4, 50.3254 )
+
+[node name="sentry_6" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 50.9279, 126.811 )
+
+[node name="sentry_7" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 50.9278, 213.719 )
+
+[node name="sentry_8" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 50.2644, 300.628 )
+
+[node name="sentry_11" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 50.5666, 366.336 )
+
+[node name="sentry_12" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 113.284, 367.965 )
+
+[node name="sentry_13" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 235.459, 368.78 )
+
+[node name="sentry_14" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 356.006, 367.965 )
+
+[node name="sentry_15" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 479.811, 368.78 )
+
+[node name="sentry_16" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 600.358, 367.965 )
+
+[node name="sentry_17" parent="." instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 686.696, 369.594 )
+
+[node name="sentry_18" parent="." instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 686.696, 309.321 )
+
+[node name="sentry_19" parent="." instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 687.51, 222.169 )
+
+[node name="sentry_20" parent="." instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 687.51, 135.017 )
+
+

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://game/scripts/commander.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/player/player_id.png" type="Texture" id=2]
+[ext_resource path="res://game/scenes/light_source.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -65,5 +66,7 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
+
+[node name="light_source" parent="." instance=ExtResource( 3 )]
 
 

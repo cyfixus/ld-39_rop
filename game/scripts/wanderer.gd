@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 onready var sprite = get_node("sprite")
+onready var light = get_node("sprite/light")
 onready var move_timer = get_node("move_timer")
 var MOTION_SPEED = 100
 
@@ -8,9 +9,12 @@ var dirs = [Vector2(0,0), Vector2(1,0), Vector2(1,1), Vector2(0,1), Vector2(-1,0
 var dir = Vector2()
 func _ready():
 	add_to_group("wanderer")
+	sfx.play("wanderer_awaken")
 	set_fixed_process(true)
 	
 func _fixed_process(delta):
+	if !light.is_enabled():
+		print("light not enabled")
 	dir = dir.normalized()*MOTION_SPEED*delta
 	move(dir)
 

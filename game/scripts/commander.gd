@@ -70,3 +70,5 @@ func _process(delta):
 	motion = motion.normalized()*MOTION_SPEED*delta
 	move(motion)
 	global.commander_pos = get_global_pos()
+	if is_colliding():
+		sfx.play("thud")

@@ -6,17 +6,15 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 55, 12 )
+extents = Vector2( 56, 13 )
 
-[node name="tent" type="StaticBody2D"]
+[node name="tent" type="Area2D"]
 
 input/pickable = false
-collision/layers = 1
-collision/mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
 script/script = ExtResource( 1 )
 
 [node name="tent" type="Sprite" parent="."]
